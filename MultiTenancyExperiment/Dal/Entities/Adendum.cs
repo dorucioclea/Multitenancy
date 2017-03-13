@@ -1,23 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using MultiTenancyExperiment.Dal.Base;
 using MultiTenancyExperiment.Dal.Multitenancy;
 
 namespace MultiTenancyExperiment.Dal.Entities
 {
     [Tenant("Tenant")]
-    public class Note : IBaseEntity
+    public class Adendum : IBaseEntity
     {
+        public string AdendumContent { get; set; }
+        public virtual Note Note { get; set; }
+        public Guid NoteId { get; set; }
+
         public Guid Id { get; set; }
 
         public string Tenant { get; private set; }
-
-        public string Message { get; set; }
-
-        public DateTime Timestamp { get; set; }
-
-        public string Author { get; set; }
-
-        public virtual ICollection<Adendum> Adendums { get; set; } 
     }
 }

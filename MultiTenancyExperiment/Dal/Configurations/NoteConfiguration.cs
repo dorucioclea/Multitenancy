@@ -23,7 +23,8 @@ namespace MultiTenancyExperiment.Dal.Configurations
             Property(x => x.Tenant).HasColumnName("Tenant").HasColumnType("nvarchar").HasMaxLength(24).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
             Property(x => x.Message).HasColumnName("Message").HasColumnType("nvarchar").HasMaxLength(2000).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
             Property(x => x.Author).HasColumnName("Author").HasColumnType("nvarchar").HasMaxLength(2000).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
-        }
 
+            HasMany(x => x.Adendums).WithRequired(x => x.Note).HasForeignKey(x => x.NoteId);
+        }
     }
 }

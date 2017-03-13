@@ -75,12 +75,14 @@
     <Compile Include="Dal\Base\IConfigurationModule.cs" />
     <Compile Include="Dal\Base\IDbContext.cs" />
     <Compile Include="Dal\Base\ContextBase.cs" />
+    <Compile Include="Dal\Configurations\AdendumConfiguration.cs" />
     <Compile Include="Dal\Configurations\NoteConfiguration.cs" />
     <Compile Include="Dal\ContextConfiguration.cs" />
     <Compile Include="Dal\ContextConfigurationModule.cs" />
     <Compile Include="Dal\ContextFactory.cs" />
     <Compile Include="Dal\DalModule.cs" />
     <Compile Include="Dal\DatabaseContext.cs" />
+    <Compile Include="Dal\Entities\Adendum.cs" />
     <Compile Include="Dal\Entities\Note.cs" />
     <Compile Include="Dal\Extensions\DBContextExtensions.cs" />
     <Compile Include="Dal\Interfaces\IDatabaseContext.cs" />
@@ -95,6 +97,10 @@
     <Compile Include="Migrations\201703131244004_InitialMigration.Designer.cs">
       <DependentUpon>201703131244004_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703131406278_AddAdendums.cs" />
+    <Compile Include="Migrations\201703131406278_AddAdendums.Designer.cs">
+      <DependentUpon>201703131406278_AddAdendums.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
@@ -106,6 +112,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201703131244004_InitialMigration.resx">
       <DependentUpon>201703131244004_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703131406278_AddAdendums.resx">
+      <DependentUpon>201703131406278_AddAdendums.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
