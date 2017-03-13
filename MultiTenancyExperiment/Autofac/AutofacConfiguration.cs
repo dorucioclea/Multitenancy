@@ -71,7 +71,7 @@ namespace MultiTenancyExperiment.Autofac
                     return (IEnumerable<object>)_autofacContainer.ResolveKeyed(key, searchType);
                 }
 
-                return (IEnumerable<object>)Container.Resolve(searchType); ;
+                return (IEnumerable<object>)Container.Resolve(searchType);
             }
         }
     }
