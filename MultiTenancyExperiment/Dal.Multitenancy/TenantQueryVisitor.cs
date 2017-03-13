@@ -64,7 +64,7 @@ namespace MultiTenancyExperiment.Dal.Multitenancy
             // Create the parameter which is an object representation of a sql parameter.
             // We have to create a parameter and not perform a direct comparison with Equal function for example
             // as this logic is cached per query and called only once
-            var tenantParameter = tenantProperty.Property.TypeUsage.Parameter(TenantAttribute.TenantIdFilterParameterName);
+            var tenantParameter = tenantProperty.Property.TypeUsage.Parameter(MultitenancyConstants.TenantIdFilterParameterName);
             // Apply the equality between property and parameter.
             DbExpression newPredicate = tenantProperty.Equal(tenantParameter);
 

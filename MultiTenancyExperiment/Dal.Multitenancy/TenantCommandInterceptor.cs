@@ -55,7 +55,7 @@ namespace MultiTenancyExperiment.Dal.Multitenancy
 
             // Enumerate all command parameters and assign the correct value in the one we added inside query visitor
             foreach (var param in command.Parameters.Cast<DbParameter>()
-                                                    .Where(param => param.ParameterName == TenantAttribute.TenantIdFilterParameterName))
+                                                    .Where(param => param.ParameterName == MultitenancyConstants.TenantIdFilterParameterName))
             {
                 param.Value = _configuration.TenantValue;
             }

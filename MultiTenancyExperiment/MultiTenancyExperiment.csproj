@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Autofac\AutofacConfiguration.cs" />
+    <Compile Include="Dal.Multitenancy\MultitenancyConstants.cs" />
     <Compile Include="Dal.Multitenancy\TenantAttribute.cs" />
     <Compile Include="Dal.Multitenancy\TenantCommandInterceptor.cs" />
     <Compile Include="Dal.Multitenancy\TenantCommandTreeInterceptor.cs" />

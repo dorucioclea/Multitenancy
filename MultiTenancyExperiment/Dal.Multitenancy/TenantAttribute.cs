@@ -9,9 +9,6 @@ namespace MultiTenancyExperiment.Dal.Multitenancy
     [AttributeUsage(AttributeTargets.Class)]
     internal class TenantAttribute : Attribute
     {
-        public const string TenantAnnotation = "TenantAnnotation";
-        public const string TenantIdFilterParameterName = "TenantIdParameter";
-
         public string ColumnName { get; private set; }
 
         public TenantAttribute(string columnName)
@@ -28,7 +25,7 @@ namespace MultiTenancyExperiment.Dal.Multitenancy
         {
             var annotation =
                 type.MetadataProperties.SingleOrDefault(
-                    p => p.Name.EndsWith(string.Format("customannotation:{0}", TenantAnnotation)));
+                    p => p.Name.EndsWith(string.Format("customannotation:{0}", MultitenancyConstants.TenantAnnotation)));
 
             return annotation == null ? null : (string) annotation.Value;
         }
