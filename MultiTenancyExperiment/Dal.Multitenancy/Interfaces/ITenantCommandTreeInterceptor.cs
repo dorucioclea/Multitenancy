@@ -4,6 +4,5 @@ namespace MultiTenancyExperiment.Dal.Multitenancy.Interfaces
 {
     public interface ITenantCommandTreeInterceptor : IDbCommandTreeInterceptor
     {
-        
     }
 }

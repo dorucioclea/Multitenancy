@@ -50,6 +50,8 @@ namespace MultiTenancyExperiment
                 Console.WriteLine("Note : {0} with tenant {1} and message {2} with {3} adendums", note.Id, note.Tenant, note.Message, note.Adendums.Count);
             }
 
+            Console.WriteLine("Total of {0} notes", notes.Count);
+
             Console.ReadKey();
         }
     }

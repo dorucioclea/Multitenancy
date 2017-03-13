@@ -73,6 +73,7 @@
     <Compile Include="Dal.Multitenancy\TenantCommandInterceptor.cs" />
     <Compile Include="Dal.Multitenancy\TenantCommandTreeInterceptor.cs" />
     <Compile Include="Dal.Multitenancy\TenantQueryVisitor.cs" />
+    <Compile Include="Dal.Multitenancy\WrappingEfAutofacResolver.cs" />
     <Compile Include="Dal\Base\BaseEntity.cs" />
     <Compile Include="Dal\Base\IBaseEntity.cs" />
     <Compile Include="Dal\Base\IConfigurationModule.cs" />
