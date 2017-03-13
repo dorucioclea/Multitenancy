@@ -4,7 +4,7 @@ namespace MultiTenancyExperiment.Dal.Base
 {
     public interface IBaseEntity
     {
-        Guid Id { get; set; }
+        Guid Id { get; }
         string Tenant { get;}
     }
 }

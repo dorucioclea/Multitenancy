@@ -62,6 +62,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Autofac\AutofacConfiguration.cs" />
+    <Compile Include="Dal.Multitenancy\Infrastructure\LockUtil.cs" />
+    <Compile Include="Dal.Multitenancy\Infrastructure\SequentialGuid.cs" />
     <Compile Include="Dal.Multitenancy\TenancyConfiguration.cs" />
     <Compile Include="Dal.Multitenancy\Interfaces\ITenantCommandInterceptor.cs" />
     <Compile Include="Dal.Multitenancy\Interfaces\ITenantCommandTreeInterceptor.cs" />
@@ -71,6 +73,7 @@
     <Compile Include="Dal.Multitenancy\TenantCommandInterceptor.cs" />
     <Compile Include="Dal.Multitenancy\TenantCommandTreeInterceptor.cs" />
     <Compile Include="Dal.Multitenancy\TenantQueryVisitor.cs" />
+    <Compile Include="Dal\Base\BaseEntity.cs" />
     <Compile Include="Dal\Base\IBaseEntity.cs" />
     <Compile Include="Dal\Base\IConfigurationModule.cs" />
     <Compile Include="Dal\Base\IDbContext.cs" />
