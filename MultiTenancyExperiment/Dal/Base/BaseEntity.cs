@@ -8,6 +8,6 @@ namespace MultiTenancyExperiment.Dal.Base
     {
         public Guid Id { get; set; }
 
-        public string Tenant { get; set; }
+        public string Tenant { get; private set; }
     }
 }
