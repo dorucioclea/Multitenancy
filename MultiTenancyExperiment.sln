@@ -5,6 +5,12 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiTenancyExperiment", "MultiTenancyExperiment\MultiTenancyExperiment.csproj", "{F0A093DE-E34F-4DB9-B641-8FF602880BB8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EF7BD2B6-720E-449D-948E-A0CEEC38DB7A}"
+	ProjectSection(SolutionItems) = preProject
+		initialscript.sql = initialscript.sql
+		Readme.md = Readme.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

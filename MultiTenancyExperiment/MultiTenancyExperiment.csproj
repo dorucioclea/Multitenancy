@@ -92,6 +92,10 @@
     <Compile Include="IOC\Interfaces\IConfiguration.cs" />
     <Compile Include="IOC\Interfaces\IResolver.cs" />
     <Compile Include="IOC\Resolver.cs" />
+    <Compile Include="Migrations\201703131244004_InitialMigration.cs" />
+    <Compile Include="Migrations\201703131244004_InitialMigration.Designer.cs">
+      <DependentUpon>201703131244004_InitialMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
@@ -100,7 +104,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201703131244004_InitialMigration.resx">
+      <DependentUpon>201703131244004_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

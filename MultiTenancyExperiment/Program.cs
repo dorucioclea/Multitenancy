@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Autofac;
 using MultiTenancyExperiment.Autofac;
-using MultiTenancyExperiment.Dal.Base;
+using MultiTenancyExperiment.Dal.Entities;
 using MultiTenancyExperiment.Dal.Interfaces;
 
 namespace MultiTenancyExperiment
@@ -17,7 +15,23 @@ namespace MultiTenancyExperiment
             AutofacConfiguration.RegisterContainer();
             var context = AutofacConfiguration.Container.Resolve<IDatabaseContext>();
 
+            //context.Notes.Add(new Note
+            //{
+            //    Author = "Doru",
+            //    Id = Guid.NewGuid(),
+            //    Message = "Tenant message",
+            //    Timestamp = DateTime.UtcNow
+            //});
 
+            //context.SaveChanges();
+
+            
+            var notes = context.Notes.ToList();
+
+            foreach (var note in notes)
+            {
+                Console.WriteLine("Note : {0} with tenant {1} and message {2}", note.Id, note.Tenant, note.Message);
+            }
 
             Console.ReadKey();
         }
