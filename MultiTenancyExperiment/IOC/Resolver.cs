@@ -1,5 +1,4 @@
-﻿using System;
-using Autofac;
+﻿using Autofac;
 using MultiTenancyExperiment.IOC.Interfaces;
 
 namespace MultiTenancyExperiment.IOC

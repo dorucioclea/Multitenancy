@@ -1,6 +1,5 @@
 ﻿using System.Data.Entity.Infrastructure.Interception;
 using Autofac;
-using MultiTenancyExperiment.Dal.Multitenancy.Interfaces;
 
 namespace MultiTenancyExperiment.Dal.Multitenancy
 {

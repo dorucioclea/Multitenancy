@@ -83,7 +83,6 @@
     <Compile Include="Dal\DatabaseContext.cs" />
     <Compile Include="Dal\Entities\Note.cs" />
     <Compile Include="Dal\Extensions\DBContextExtensions.cs" />
-    <Compile Include="Dal\Extensions\ExpressionExtensions.cs" />
     <Compile Include="Dal\Interfaces\IDatabaseContext.cs" />
     <Compile Include="Dal\Utils\ContextException.cs" />
     <Compile Include="Dal\Utils\ContextUniqueConstraintFailureException.cs" />

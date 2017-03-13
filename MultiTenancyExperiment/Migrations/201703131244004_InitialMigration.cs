@@ -1,8 +1,8 @@
+using System.Collections.Generic;
+using System.Data.Entity.Migrations;
+
 namespace MultiTenancyExperiment.Dal
 {
-    using System.Collections.Generic;
-    using System.Data.Entity.Migrations;
-    
     public partial class InitialMigration : DbMigration
     {
         public override void Up()

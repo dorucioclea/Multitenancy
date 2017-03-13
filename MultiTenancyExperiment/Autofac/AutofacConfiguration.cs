@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure.DependencyResolution;
@@ -57,7 +58,7 @@ namespace MultiTenancyExperiment.Autofac
             public IEnumerable<object> GetServices(Type type, object key)
             {
                 var type1 = typeof(Enumerable)
-                    .GetMethod("Cast", new[] { typeof(System.Collections.IEnumerable) })
+                    .GetMethod("Cast", new[] { typeof(IEnumerable) })
                     .MakeGenericMethod(type);
 
                 var searchType = type1.ReturnType;

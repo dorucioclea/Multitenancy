@@ -6,6 +6,6 @@ namespace MultiTenancyExperiment.Dal.Interfaces
 {
     public interface  IDatabaseContext : IDbContext
     {
-        IDbSet<Note> Notes { get; set; } 
+        IDbSet<Note> Notes { get; } 
     }
 }

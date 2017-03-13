@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Linq;
-using System.Text;
 using Autofac;
 using MultiTenancyExperiment.Autofac;
-using MultiTenancyExperiment.Dal.Entities;
 using MultiTenancyExperiment.Dal.Interfaces;
 
 namespace MultiTenancyExperiment

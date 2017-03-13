@@ -12,17 +12,15 @@ namespace MultiTenancyExperiment.IOC
 
         private void Load()
         {
-            if (!_initialized)
+            if (_initialized) return;
+            
+            lock (_lockObject)
             {
-                lock (_lockObject)
-                {
-                    if (!_initialized)
-                    {
-                        _initialized = true;
-                        _databaseConnection = ConfigurationManager.AppSettings["db"];
-                        _tenantValue = ConfigurationManager.AppSettings["tenant"];
-                    }
-                }
+                if (_initialized) return;
+                    
+                _initialized = true;
+                _databaseConnection = ConfigurationManager.AppSettings["db"];
+                _tenantValue = ConfigurationManager.AppSettings["tenant"];
             }
         }
 

@@ -27,7 +27,7 @@ namespace MultiTenancyExperiment.Dal.Base
 
         }
 
-        public DbContextBase(EntityConnection connection, params IConfigurationModule[] modules)
+        protected DbContextBase(EntityConnection connection, params IConfigurationModule[] modules)
             : base(connection, true)
         {
             _modules = modules;

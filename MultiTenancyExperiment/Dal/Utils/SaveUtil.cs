@@ -7,7 +7,6 @@ using System.Data.Entity.Validation;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace MultiTenancyExperiment.Dal.Utils
 {

@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace MultiTenancyExperiment.Dal.Extensions
 {
-    public static class DBContextExtensions
+    internal static class DbContextExtensions
     {
         public static void DisableDatabaseInitialization(this DbContext dbContext)
         {
