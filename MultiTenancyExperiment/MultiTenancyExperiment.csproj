@@ -64,6 +64,8 @@
     <Compile Include="Autofac\AutofacConfiguration.cs" />
     <Compile Include="Dal.Multitenancy\Infrastructure\LockUtil.cs" />
     <Compile Include="Dal.Multitenancy\Infrastructure\SequentialGuid.cs" />
+    <Compile Include="Dal.Multitenancy\Infrastructure\SequentialGuidGenerator.cs" />
+    <Compile Include="Dal.Multitenancy\Interfaces\IGuidGenerator.cs" />
     <Compile Include="Dal.Multitenancy\TenancyConfiguration.cs" />
     <Compile Include="Dal.Multitenancy\Interfaces\ITenantCommandInterceptor.cs" />
     <Compile Include="Dal.Multitenancy\Interfaces\ITenantCommandTreeInterceptor.cs" />

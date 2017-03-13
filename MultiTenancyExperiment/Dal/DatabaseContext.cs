@@ -4,19 +4,22 @@ using MultiTenancyExperiment.Dal.Entities;
 using MultiTenancyExperiment.Dal.Extensions;
 using MultiTenancyExperiment.Dal.Interfaces;
 using MultiTenancyExperiment.Dal.Multitenancy;
+using MultiTenancyExperiment.Dal.Multitenancy.Infrastructure;
+using MultiTenancyExperiment.Dal.Multitenancy.Interfaces;
 using MultiTenancyExperiment.IOC.Interfaces;
 
 namespace MultiTenancyExperiment.Dal
 {
     public class DatabaseContext : DbContextBase, IDatabaseContext
     {
-        public DatabaseContext(IConfiguration configuration, TenancyConfiguration tenancyConfiguration) 
-            : base(configuration, tenancyConfiguration, new ContextConfigurationModule())
+        public DatabaseContext(IConfiguration configuration, TenancyConfiguration tenancyConfiguration, IGuidGenerator generator) 
+            : base(configuration, tenancyConfiguration, generator, new ContextConfigurationModule())
         {
             this.DisableDatabaseInitialization();
         }
 
-        public DatabaseContext(string connectionString)
+        // only used in development
+        internal DatabaseContext(string connectionString)
             : base(connectionString, new ContextConfigurationModule())
         {
             this.DisableDatabaseInitialization();

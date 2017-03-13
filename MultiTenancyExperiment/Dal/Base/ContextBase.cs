@@ -4,6 +4,8 @@ using System.Data.Entity.Core.EntityClient;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using MultiTenancyExperiment.Dal.Multitenancy;
+using MultiTenancyExperiment.Dal.Multitenancy.Infrastructure;
+using MultiTenancyExperiment.Dal.Multitenancy.Interfaces;
 using MultiTenancyExperiment.Dal.Utils;
 using MultiTenancyExperiment.IOC.Interfaces;
 
@@ -11,13 +13,16 @@ namespace MultiTenancyExperiment.Dal.Base
 {
     public abstract class DbContextBase : DbContext, IDbContext
     {
+        private readonly IGuidGenerator _generator;
         readonly IConfigurationModule[] _modules;
 
-        protected DbContextBase(IConfiguration configuration, TenancyConfiguration tenancyConfiguration, params IConfigurationModule[] modules)
+        protected DbContextBase(IConfiguration configuration, TenancyConfiguration tenancyConfiguration, 
+            IGuidGenerator generator, params IConfigurationModule[] modules)
             : base(configuration.DatabaseConnection)
         {
             DbConfiguration.SetConfiguration(tenancyConfiguration);
 
+            _generator = generator;
             _modules = modules;
         }
 
@@ -93,6 +98,12 @@ namespace MultiTenancyExperiment.Dal.Base
 
         public override int SaveChanges()
         {
+            foreach (var entry in ChangeTracker.Entries<BaseEntity>()
+                .Where(e => e.State == EntityState.Added))
+            {
+                entry.Entity.Id = _generator.NewId();
+            }
+
             return SaveUtil.ExecuteDatabaseSave(base.SaveChanges);
         }
 
