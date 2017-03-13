@@ -5,8 +5,7 @@ using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Data.Entity.Core.Metadata.Edm;
 using System.Data.Entity.Infrastructure.Interception;
 using System.Linq;
-using System.Security.Claims;
-using System.Threading;
+using MultiTenancyExperiment.Dal.Multitenancy.Interfaces;
 using MultiTenancyExperiment.IOC.Interfaces;
 
 namespace MultiTenancyExperiment.Dal.Multitenancy
@@ -14,7 +13,7 @@ namespace MultiTenancyExperiment.Dal.Multitenancy
     /// <summary>
     /// Custom implementation of <see cref="IDbCommandTreeInterceptor"/> which filters based on tenantId.
     /// </summary>
-    public class TenantCommandTreeInterceptor : IDbCommandTreeInterceptor
+    public class TenantCommandTreeInterceptor : ITenantCommandTreeInterceptor
     {
         private readonly IConfiguration _configuration;
 

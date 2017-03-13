@@ -11,6 +11,7 @@ namespace MultiTenancyExperiment.Dal
     {
         public DatabaseContext(IConfiguration configuration) : base(configuration, new ContextConfigurationModule())
         {
+            //System.Data.Entity.DbConfiguration.SetConfiguration(new Multitenancy.ContextConfiguration());
             this.DisableDatabaseInitialization();
         }
 

@@ -1,6 +1,7 @@
 ﻿using System.Data.Common;
 using System.Data.Entity.Infrastructure.Interception;
 using System.Linq;
+using MultiTenancyExperiment.Dal.Multitenancy.Interfaces;
 using MultiTenancyExperiment.IOC.Interfaces;
 
 namespace MultiTenancyExperiment.Dal.Multitenancy
@@ -9,7 +10,7 @@ namespace MultiTenancyExperiment.Dal.Multitenancy
     /// Custom implementation of <see cref="IDbCommandInterceptor"/>.
     /// In this class we set the actual value of the tenantId when querying the database as the command tree is cached  
     /// </summary>
-    internal class TenantCommandInterceptor : IDbCommandInterceptor
+    internal class TenantCommandInterceptor : ITenantCommandInterceptor
     {
         private readonly IConfiguration _configuration;
 

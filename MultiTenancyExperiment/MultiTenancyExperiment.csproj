@@ -62,6 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Autofac\AutofacConfiguration.cs" />
+    <Compile Include="Dal.Multitenancy\ContextConfiguration.cs" />
+    <Compile Include="Dal.Multitenancy\Interfaces\ITenantCommandInterceptor.cs" />
+    <Compile Include="Dal.Multitenancy\Interfaces\ITenantCommandTreeInterceptor.cs" />
     <Compile Include="Dal.Multitenancy\MultitenancyConstants.cs" />
     <Compile Include="Dal.Multitenancy\TenantAttribute.cs" />
     <Compile Include="Dal.Multitenancy\TenantCommandInterceptor.cs" />
@@ -78,6 +81,7 @@
     <Compile Include="Dal\DatabaseContext.cs" />
     <Compile Include="Dal\Entities\Note.cs" />
     <Compile Include="Dal\Extensions\DBContextExtensions.cs" />
+    <Compile Include="Dal\Extensions\ExpressionExtensions.cs" />
     <Compile Include="Dal\Interfaces\IDatabaseContext.cs" />
     <Compile Include="Dal\Utils\ContextException.cs" />
     <Compile Include="Dal\Utils\ContextUniqueConstraintFailureException.cs" />
