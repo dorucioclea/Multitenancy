@@ -1,6 +1,14 @@
 ##What this is
 
 This is a multitenancy experiment.
+
+Multitenancy can be achieved through multiple scenarios: 
+
+- Different schema (this will create a set of tables with different schemas for each tenant)
+- Different connection strings (for each tenant)
+- Different tenant id on table's column (what we're doing here)
+
+
 It uses autofac for dependency injection and entity code first for migrations.
 
 ##What this is not
