@@ -4,9 +4,9 @@ using MultiTenancyExperiment.Dal.Multitenancy.Interfaces;
 
 namespace MultiTenancyExperiment.Dal.Multitenancy
 {
-    public class ContextConfiguration : DbConfiguration
+    public class TenancyConfiguration : DbConfiguration
     {
-        public ContextConfiguration(ITenantCommandInterceptor tenantCommandInterceptor, 
+        public TenancyConfiguration(ITenantCommandInterceptor tenantCommandInterceptor, 
             ITenantCommandTreeInterceptor tenantCommandTreeInterceptor)
         {
             AddInterceptor(tenantCommandInterceptor);

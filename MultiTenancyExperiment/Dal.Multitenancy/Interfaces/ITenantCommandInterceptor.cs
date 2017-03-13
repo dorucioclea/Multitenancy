@@ -1,5 +1,4 @@
-﻿using System;
-using System.Data.Entity.Infrastructure.Interception;
+﻿using System.Data.Entity.Infrastructure.Interception;
 
 namespace MultiTenancyExperiment.Dal.Multitenancy.Interfaces
 {
@@ -7,3 +6,4 @@ namespace MultiTenancyExperiment.Dal.Multitenancy.Interfaces
     {
     }
 }
+    

@@ -3,15 +3,17 @@ using MultiTenancyExperiment.Dal.Base;
 using MultiTenancyExperiment.Dal.Entities;
 using MultiTenancyExperiment.Dal.Extensions;
 using MultiTenancyExperiment.Dal.Interfaces;
+using MultiTenancyExperiment.Dal.Multitenancy;
 using MultiTenancyExperiment.IOC.Interfaces;
 
 namespace MultiTenancyExperiment.Dal
 {
     public class DatabaseContext : DbContextBase, IDatabaseContext
     {
-        public DatabaseContext(IConfiguration configuration) : base(configuration, new ContextConfigurationModule())
+        public DatabaseContext(IConfiguration configuration, TenancyConfiguration tenancyConfiguration) 
+            : base(configuration, new ContextConfigurationModule())
         {
-            //System.Data.Entity.DbConfiguration.SetConfiguration(new Multitenancy.ContextConfiguration());
+            DbConfiguration.SetConfiguration(tenancyConfiguration);
             this.DisableDatabaseInitialization();
         }
 
