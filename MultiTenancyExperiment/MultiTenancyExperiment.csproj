@@ -53,6 +53,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,6 +62,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Autofac\AutofacConfiguration.cs" />
+    <Compile Include="Dal.Multitenancy\TenantAttribute.cs" />
+    <Compile Include="Dal.Multitenancy\TenantCommandInterceptor.cs" />
+    <Compile Include="Dal.Multitenancy\TenantCommandTreeInterceptor.cs" />
+    <Compile Include="Dal.Multitenancy\TenantQueryVisitor.cs" />
     <Compile Include="Dal\Base\IBaseEntity.cs" />
     <Compile Include="Dal\Base\IConfigurationModule.cs" />
     <Compile Include="Dal\Base\IDbContext.cs" />
@@ -88,9 +93,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Dal.Multitenancy\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

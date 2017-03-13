@@ -76,3 +76,7 @@ Temporary Items
 /packages/Newtonsoft.Json.9.0.1/lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml
 /packages/Newtonsoft.Json.9.0.1/lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.xml
 /packages/Newtonsoft.Json.9.0.1/tools/install.ps1
+/MultiTenancyExperiment/bin/Debug/Autofac.xml
+/MultiTenancyExperiment/bin/Debug/EntityFramework.SqlServer.xml
+/MultiTenancyExperiment/bin/Debug/EntityFramework.xml
+/MultiTenancyExperiment/bin/Debug/Newtonsoft.Json.xml
