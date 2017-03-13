@@ -9,10 +9,10 @@ namespace MultiTenancyExperiment.Dal.Multitenancy.Infrastructure
 
         public LockUtil(object lockObj) : this(lockObj, TimeSpan.FromSeconds(5)) { }
 
-        public LockUtil(object lockObj, TimeSpan timeout)
+        private LockUtil(object lockObj, TimeSpan timeout)
         {
-            this._lockObj = lockObj;
-            if (!Monitor.TryEnter(this._lockObj, timeout))
+            _lockObj = lockObj;
+            if (!Monitor.TryEnter(_lockObj, timeout))
                 throw new TimeoutException();
         }
 

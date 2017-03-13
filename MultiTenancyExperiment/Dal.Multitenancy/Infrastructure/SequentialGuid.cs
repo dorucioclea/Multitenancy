@@ -49,7 +49,7 @@ namespace MultiTenancyExperiment.Dal.Multitenancy.Infrastructure
             }
         }
 
-        public static TimeSpan TotalPeriod
+        private static TimeSpan TotalPeriod
         {
             get
             {
