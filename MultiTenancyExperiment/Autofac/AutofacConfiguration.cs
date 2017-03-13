@@ -11,7 +11,7 @@ using MultiTenancyExperiment.IOC.Interfaces;
 
 namespace MultiTenancyExperiment.Autofac
 {
-    public class AutofacConfiguration
+    public static class AutofacConfiguration
     {
         public static IContainer Container { get; private set; }
         public static void RegisterContainer()
@@ -48,11 +48,7 @@ namespace MultiTenancyExperiment.Autofac
             {
                 if (_autofacContainer.IsRegistered(type))
                 {
-                    if (key != null)
-                    {
-                        return _autofacContainer.ResolveKeyed(key, type);
-                    }
-                    return _autofacContainer.Resolve(type);
+                    return key != null ? _autofacContainer.ResolveKeyed(key, type) : _autofacContainer.Resolve(type);
                 }
 
                 return _baseDependencyResolver.GetService(type, key);
@@ -66,16 +62,15 @@ namespace MultiTenancyExperiment.Autofac
 
                 var searchType = type1.ReturnType;
 
-                if (_autofacContainer.IsRegistered(searchType))
+                if (!_autofacContainer.IsRegistered(searchType))
+                    return _baseDependencyResolver.GetServices(searchType, key);
+                
+                if (key != null)
                 {
-                    if (key != null)
-                    {
-                        return (IEnumerable<object>)_autofacContainer.ResolveKeyed(key, searchType);
-                    }
-                    return (IEnumerable<object>)Container.Resolve(searchType); ;
+                    return (IEnumerable<object>)_autofacContainer.ResolveKeyed(key, searchType);
                 }
 
-                return _baseDependencyResolver.GetServices(searchType, key);
+                return (IEnumerable<object>)Container.Resolve(searchType); ;
             }
         }
     }
