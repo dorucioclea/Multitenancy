@@ -1,8 +1,10 @@
 ﻿using System;
 using MultiTenancyExperiment.Dal.Base;
+using MultiTenancyExperiment.Dal.Multitenancy;
 
 namespace MultiTenancyExperiment.Dal.Entities
 {
+    [Tenant("Tenant")]
     public class Note : IBaseEntity
     {
         public Guid Id { get; set; }
