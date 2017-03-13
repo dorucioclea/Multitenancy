@@ -11,9 +11,8 @@ namespace MultiTenancyExperiment.Dal
     public class DatabaseContext : DbContextBase, IDatabaseContext
     {
         public DatabaseContext(IConfiguration configuration, TenancyConfiguration tenancyConfiguration) 
-            : base(configuration, new ContextConfigurationModule())
+            : base(configuration, tenancyConfiguration, new ContextConfigurationModule())
         {
-            DbConfiguration.SetConfiguration(tenancyConfiguration);
             this.DisableDatabaseInitialization();
         }
 

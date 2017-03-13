@@ -6,6 +6,11 @@ namespace MultiTenancyExperiment.Dal.Multitenancy
 {
     public class TenancyConfiguration : DbConfiguration
     {
+        public TenancyConfiguration()
+        {
+            
+        }
+
         public TenancyConfiguration(ITenantCommandInterceptor tenantCommandInterceptor, 
             ITenantCommandTreeInterceptor tenantCommandTreeInterceptor)
         {

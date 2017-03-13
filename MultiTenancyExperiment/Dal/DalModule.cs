@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Autofac;
+﻿using Autofac;
 using MultiTenancyExperiment.Dal.Interfaces;
 
 namespace MultiTenancyExperiment.Dal
@@ -12,7 +7,7 @@ namespace MultiTenancyExperiment.Dal
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<IDatabaseContext>().As<DatabaseContext>().InstancePerLifetimeScope();
+            builder.RegisterType<DatabaseContext>().As<IDatabaseContext>().InstancePerLifetimeScope();
         }
     }
 }

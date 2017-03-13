@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Autofac;
 using MultiTenancyExperiment.Autofac;
 using MultiTenancyExperiment.Dal.Base;
+using MultiTenancyExperiment.Dal.Interfaces;
 
 namespace MultiTenancyExperiment
 {
@@ -14,7 +15,11 @@ namespace MultiTenancyExperiment
         static void Main(string[] args)
         {
             AutofacConfiguration.RegisterContainer();
-            var context = AutofacConfiguration.Container.Resolve<IDbContext>();
+            var context = AutofacConfiguration.Container.Resolve<IDatabaseContext>();
+
+
+
+            Console.ReadKey();
         }
     }
 }

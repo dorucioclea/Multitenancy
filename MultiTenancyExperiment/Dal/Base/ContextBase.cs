@@ -3,6 +3,7 @@ using System.Data.Entity;
 using System.Data.Entity.Core.EntityClient;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
+using MultiTenancyExperiment.Dal.Multitenancy;
 using MultiTenancyExperiment.Dal.Utils;
 using MultiTenancyExperiment.IOC.Interfaces;
 
@@ -12,9 +13,11 @@ namespace MultiTenancyExperiment.Dal.Base
     {
         readonly IConfigurationModule[] _modules;
 
-        protected DbContextBase(IConfiguration configuration, params IConfigurationModule[] modules)
+        protected DbContextBase(IConfiguration configuration, TenancyConfiguration tenancyConfiguration, params IConfigurationModule[] modules)
             : base(configuration.DatabaseConnection)
         {
+            DbConfiguration.SetConfiguration(tenancyConfiguration);
+
             _modules = modules;
         }
 
@@ -24,7 +27,7 @@ namespace MultiTenancyExperiment.Dal.Base
 
         }
 
-        protected DbContextBase(EntityConnection connection, params IConfigurationModule[] modules)
+        public DbContextBase(EntityConnection connection, params IConfigurationModule[] modules)
             : base(connection, true)
         {
             _modules = modules;

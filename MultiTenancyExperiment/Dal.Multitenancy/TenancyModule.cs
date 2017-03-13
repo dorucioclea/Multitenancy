@@ -7,9 +7,9 @@ namespace MultiTenancyExperiment.Dal.Multitenancy
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<ITenantCommandInterceptor>().As<TenantCommandInterceptor>().InstancePerLifetimeScope();
-            builder.RegisterType<ITenantCommandTreeInterceptor>()
-                .As<TenantCommandTreeInterceptor>()
+            builder.RegisterType<TenantCommandInterceptor>().As<ITenantCommandInterceptor>().InstancePerLifetimeScope();
+            builder.RegisterType<TenantCommandTreeInterceptor>()
+                .As<ITenantCommandTreeInterceptor>()
                 .InstancePerLifetimeScope();
 
             builder.RegisterType<TenancyConfiguration>().AsSelf().InstancePerLifetimeScope();
