@@ -6,13 +6,7 @@ namespace MultiTenancyExperiment.Dal.Configurations
 {
     public class BaseConfiguration<T> : EntityTypeConfiguration<T> where T : BaseEntity
     {
-        protected  BaseConfiguration()
-            : this("dbo")
-        {
-            
-        }
-
-        protected BaseConfiguration(string schema)
+        protected BaseConfiguration()
         {
             HasKey(x => x.Id);
             Property(x => x.Tenant).HasColumnName("Tenant").HasColumnType("nvarchar").HasMaxLength(24).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);

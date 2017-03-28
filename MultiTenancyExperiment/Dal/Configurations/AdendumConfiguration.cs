@@ -12,7 +12,7 @@ namespace MultiTenancyExperiment.Dal.Configurations
             
         }
 
-        private AdendumConfiguration(string schema)  : base(schema)
+        private AdendumConfiguration(string schema) 
         {
             ToTable(TableName, schema);
             Property(x => x.AdendumContent).HasColumnName("AdendumContent").HasColumnType("nvarchar").HasMaxLength(2000).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);

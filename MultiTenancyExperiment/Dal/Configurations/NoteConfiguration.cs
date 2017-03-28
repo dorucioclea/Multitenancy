@@ -12,7 +12,7 @@ namespace MultiTenancyExperiment.Dal.Configurations
             
         }
 
-        private NoteConfiguration(string schema) : base(schema)
+        private NoteConfiguration(string schema)
         {
             ToTable(TableName, schema);
             
