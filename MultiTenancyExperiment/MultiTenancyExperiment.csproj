@@ -82,6 +82,7 @@
     <Compile Include="Dal\Base\IDbContext.cs" />
     <Compile Include="Dal\Base\ContextBase.cs" />
     <Compile Include="Dal\Configurations\AdendumConfiguration.cs" />
+    <Compile Include="Dal\Configurations\BaseConfiguration.cs" />
     <Compile Include="Dal\Configurations\NoteConfiguration.cs" />
     <Compile Include="Dal\ContextConfiguration.cs" />
     <Compile Include="Dal\ContextConfigurationModule.cs" />

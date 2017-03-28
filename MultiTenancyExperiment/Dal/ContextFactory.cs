@@ -2,13 +2,16 @@
 
 namespace MultiTenancyExperiment.Dal
 {
-#if DEBUG
     public class ContextFactory : IDbContextFactory<DatabaseContext>
     {
+#if DEBUG
+
         public DatabaseContext Create()
         {
             return new DatabaseContext(Settings.DbConnection);
         }
-    }
+
 #endif
+
+    }
 }

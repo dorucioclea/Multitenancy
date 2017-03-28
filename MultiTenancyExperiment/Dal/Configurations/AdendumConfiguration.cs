@@ -1,10 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity.ModelConfiguration;
 using MultiTenancyExperiment.Dal.Entities;
 
 namespace MultiTenancyExperiment.Dal.Configurations
 {
-    public class AdendumConfiguration : EntityTypeConfiguration<Adendum>
+    public class AdendumConfiguration : BaseConfiguration<Adendum>
     {
         private const string TableName = "Adendums";
 
@@ -13,12 +12,9 @@ namespace MultiTenancyExperiment.Dal.Configurations
             
         }
 
-        private AdendumConfiguration(string schema)
+        private AdendumConfiguration(string schema)  : base(schema)
         {
             ToTable(TableName, schema);
-
-            HasKey(x => x.Id);
-            Property(x => x.Tenant).HasColumnName("Tenant").HasColumnType("nvarchar").HasMaxLength(24).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
             Property(x => x.AdendumContent).HasColumnName("AdendumContent").HasColumnType("nvarchar").HasMaxLength(2000).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
         }
     }
